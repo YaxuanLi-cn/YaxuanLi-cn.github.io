@@ -4,150 +4,140 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>yaxuanli's homepage</title>
-  <!-- Google Font for a modern look -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
-    /* Reset */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-    
+
     body {
-      font-family: 'Montserrat', sans-serif;
-      color: #fff;
-      background: #000;
-      overflow-x: hidden;
-      position: relative;
-      z-index: 1;
+      font-family: 'Poppins', sans-serif;
+      color: #ffffff;
+      background: linear-gradient(135deg, #141e30, #243b55);
+      line-height: 1.6;
     }
-    
-    /* Canvas for animated starfield */
-    #starfield {
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: -10;
-    }
-    
+
     header {
       text-align: center;
-      padding: 2rem 0;
+      padding: 3rem 1rem;
+      background: rgba(0,0,0,0.3);
     }
-    
+
     header h1 {
-      font-size: 3rem;
-      text-shadow: 0 0 10px #fff;
+      font-size: 2.8rem;
+      font-weight: 700;
       margin-bottom: 0.5rem;
     }
-    
-    header p {
-      font-size: 1.5rem;
-      text-shadow: 0 0 5px #fff;
-    }
-    
+
     nav {
       text-align: center;
-      padding: 1rem 0;
+      background: rgba(0,0,0,0.2);
+      padding: 1rem;
     }
-    
+
     nav a {
-      color: #fff;
+      color: #ffffff;
       text-decoration: none;
-      margin: 0 1.5rem;
-      font-size: 1.2rem;
+      margin: 0 1rem;
+      font-weight: 500;
       transition: color 0.3s;
     }
-    
+
     nav a:hover {
-      color: #ffcc00;
+      color: #ffdd57;
     }
-    
+
     main {
-      max-width: 800px;
-      margin: 2rem auto;
-      background: rgba(0, 0, 50, 0.7);
+      max-width: 900px;
+      margin: 3rem auto;
       padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+      background: rgba(255,255,255,0.1);
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
     }
-    
-    main section {
+
+    section {
       margin-bottom: 2rem;
     }
-    
-    main h2 {
+
+    h2 {
       font-size: 2rem;
       margin-bottom: 1rem;
-      border-bottom: 1px solid #ffcc00;
-      padding-bottom: 0.5rem;
+      border-bottom: 3px solid #ffdd57;
+      display: inline-block;
+      padding-bottom: 0.2rem;
     }
-    
-    main p {
-      font-size: 1.1rem;
-      line-height: 1.8;
-    }
-    
+
     footer {
       text-align: center;
       padding: 1rem;
-      background: rgba(0, 0, 50, 0.8);
+      background: rgba(0,0,0,0.3);
       position: fixed;
       bottom: 0;
       width: 100%;
       font-size: 0.9rem;
     }
-    
+
+    canvas#starfield {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -10;
+    }
+
     @media (max-width: 768px) {
-      header h1 { font-size: 2.5rem; }
+      header h1 { font-size: 2rem; }
       nav a { display: block; margin: 0.5rem 0; }
-      main { margin: 2rem 1rem; }
+      main { margin: 2rem 1rem; padding: 1rem; }
     }
   </style>
 </head>
 <body>
   <canvas id="starfield"></canvas>
-  
+
   <header>
     <h1>Welcome to yaxuanli's homepage</h1>
   </header>
-  
+
   <nav>
     <a href="#About">About</a>
-    <a href="#Publications">Projects</a>
+    <a href="#News">News</a>
+    <a href="#Publications">Publications</a>
+    <a href="#Honors">Honors</a>
+    <a href="#Blog">Blog</a>
     <a href="#Contact">Contact</a>
   </nav>
-  
+
   <main>
     <section id="About">
       <h2>About Me</h2>
       <p>Hi!</p>
     </section>
-    
+
     <section id="Publications">
-      <h2>Projects</h2>
+      <h2>Publications</h2>
       <p>TO DO.</p>
     </section>
-    
+
     <section id="Contact">
       <h2>Contact</h2>
       <p>TO DO.</p>
     </section>
   </main>
-  
+
   <footer>
     <p>&copy; 2025 yaxuanli. All rights reserved.</p>
   </footer>
-  
+
   <script>
     const canvas = document.getElementById('starfield');
     const ctx = canvas.getContext('2d');
 
     let stars = [];
-    const numStars = 200;
+    const numStars = 150;
 
-    // Initialize canvas dimensions and star properties
     function initCanvas() {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
@@ -157,15 +147,14 @@
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
           radius: Math.random() * 1.5,
-          speed: Math.random() * 0.5 + 0.2
+          speed: Math.random() * 0.4 + 0.1
         });
       }
     }
 
-    // Draw stars on the canvas
     function drawStars() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = "white";
+      ctx.fillStyle = "rgba(255,255,255,0.8)";
       stars.forEach(star => {
         ctx.beginPath();
         ctx.arc(star.x, star.y, star.radius, 0, 2 * Math.PI);
@@ -173,7 +162,6 @@
       });
     }
 
-    // Update star positions to simulate movement
     function updateStars() {
       stars.forEach(star => {
         star.y += star.speed;
@@ -184,19 +172,16 @@
       });
     }
 
-    // Animate the starfield
     function animate() {
       drawStars();
       updateStars();
       requestAnimationFrame(animate);
     }
 
-    // Initialize and start animation
+    window.addEventListener('resize', initCanvas);
+
     initCanvas();
     animate();
-
-    // Adjust canvas size on window resize
-    window.addEventListener('resize', initCanvas);
   </script>
 </body>
 </html>
