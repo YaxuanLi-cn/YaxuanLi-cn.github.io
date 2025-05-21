@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>yaxuanli's homepage</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #ffffff;
+      background: linear-gradient(135deg, #141e30, #243b55);
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: rgba(0,0,0,0.3);
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    nav {
+      text-align: center;
+      background: rgba(0,0,0,0.2);
+      padding: 1rem;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffdd57;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background: rgba(255,255,255,0.1);
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      border-bottom: 3px solid #ffdd57;
+      display: inline-block;
+      padding-bottom: 0.2rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: rgba(0,0,0,0.3);
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      font-size: 0.9rem;
+    }
+
+    canvas#starfield {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -10;
+    }
+
+    @media (max-width: 768px) {
+      header h1 { font-size: 2rem; }
+      nav a { display: block; margin: 0.5rem 0; }
+      main { margin: 2rem 1rem; padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="starfield"></canvas>
+
+  <header>
+    <h1>Welcome to yaxuanli's homepage</h1>
+  </header>
+
+  <nav>
+    <a href="#About">About</a>
+    <a href="#News">News</a>
+    <a href="#Publications">Publications</a>
+    <a href="#Honors">Honors</a>
+    <a href="#Blog">Blog</a>
+    <a href="#Contact">Contact</a>
+  </nav>
+
+  <main>
+    <section id="About">
+      <h2>About Me</h2>
+      <p>Hi!</p>
+    </section>
+
+    <section id="Publications">
+      <h2>Publications</h2>
+
+      <ul style="list-style: none; padding: 0;">
+
+        <li style="display: flex; margin-bottom: 3rem; align-items: flex-start;">
+
+          <div style="flex: 1;">
+            <span style="font-weight: bold; color: #ffdd57;">[MICCAI 2025]</span>
+            <strong style="margin-left: 5px;">Speech Audio Generation from dynamic MRI via a Knowledge Enhanced Conditional Variational Autoencoder</strong><br>
+            Yaxuan Li, Han Jiang, Yifei Ma, Shihua Qin, and Fangxu Xing.
+            <details style="margin-top: 0.5rem;">
+              <summary style="cursor: pointer; color: #ffdd57;">Abstract
+              <a href="./papers/2025_1_MICCAI.pdf" target="_blank" style="margin-left: 10px;"> [PDF]</a>
+              <a href="./bibs/2025_1_MICCAI.bib" target="_blank" style="margin-left: 3px;"> [BIB]</a>
+              <a href="./papers/2025_1_MICCAI.pdf" target="_blank" style="margin-left: 3px;"> [Web]</a>
+              </summary>
+              <p style="margin-top: 0.5rem; font-size: 0.9rem;">
+                Dynamic Magnetic Resonance Imaging (MRI) of the vocal tract has become an increasingly adopted imaging modality for speech motor studies. Beyond image signals, systematic data loss, noise pollu tion, and audio file corruption can occur due to the unpredictability of the MRI acquisition environment. In such cases, generating audio from images is critical for data recovery in both clinical and research applications. However, this remains challenging due to hardware con straints, acoustic interference, and data corruption. Existing solutions, such as denoising and multi-stage synthesis methods, face limitations in audio fidelity and generalizability. To address these challenges, we propose a Knowledge Enhanced Conditional Variational Autoencoder (KE-CVAE), a novel two-step "knowledge enhancement + variational inference" framework for generating speech audio signals from cine dy namic MRI sequences. This approach introduces two key innovations: (1) integration of unlabeled MRI data for knowledge enhancement, and (2) a variational inference architecture to improve generative modeling capacity. To the best of our knowledge, this is one of the first attempts at synthesizing speech audio directly from dynamic MRI video sequences. The proposed method was trained and evaluated on an open-source dy namic vocal tract MRI dataset recorded during speech. Experimental results demonstrate its effectiveness in generating natural speech wave forms while addressing MRI-specific acoustic challenges, outperforming conventional deep learning-based synthesis approaches.
+              </p>
+            </details>
+          </div>
+
+          <img src="./images/2025_1_MICCAI.png" style="width: 380px; height: 130px; margin-left: 5px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.2);">
+
+        </li>
+
+        <li style="display: flex; margin-bottom: 1.5rem; align-items: flex-start;">
+
+          <div style="flex: 1;">
+            <span style="font-weight: bold; color: #ffdd57;">[AAAI 2025 Workshop]</span>
+            <strong style="margin-left: 5px;">A Reweighting Based Approach for Treatment Effect Estimation Under Unmeasured Confounding with Non-Representative Randomized Data</strong><br>
+            Yaxuan Li, Chuan Zhou.
+            <details style="margin-top: 0.5rem;">
+              <summary style="cursor: pointer; color: #ffdd57;">Abstract
+              <a href="./papers/2025_1_AAAI_workshop.pdf" target="_blank" style="margin-left: 10px;"> [PDF]</a>
+              <a href="./bibs/2025_1_AAAI_workshop.bib" target="_blank" style="margin-left: 3px;"> [BIB]</a>
+              <a href="https://openreview.net/forum?id=CRINmuOMSg" target="_blank" style="margin-left: 3px;"> [Web]</a>
+              </summary>
+              <p style="margin-top: 0.5rem; font-size: 0.9rem;">
+                Causal effect estimation aims to measure the true causal relationship between treatment and outcome variables, which is widely applied in areas such as medicine, commerce, and sociology. A challenge in causal effect estimation is that un measured variables may affect both treatment and outcome variables, which are named unmeasured confounders. Traditional methods of causal effect estimation are biased in the presence of unmeasured confounding. Previous data fusion-based methods employ observational data (OBS) combined with limited-sized randomized controlled trial (RCT) data to eliminate confounding bias. However, existing methods typi cally assume that the OBS and RCT data come from the same target population, a relatively strong assumption given the difficulties of randomized trials. In this paper, we consider re laxing this assumption to achieve data fusion in the case where the RCT data is a biased sample of the target population, thus eliminating selection bias and obtaining unbiased estimates of causal effects. We propose a reweighting-based approach that uses OBS and RCT data successively and debiases in the second stage via reweighting. Extensive experiments are conducted to demonstrate the effectiveness of our method.
+              </p>
+            </details>
+          </div>
+
+          <img src="./images/2025_1_AAAI_workshop.png" style="width: 380px; height: 120px; margin-left: 5px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.2);">
+
+        </li>
+
+      </ul>
+
+    </section>
+
+
+    <section id="Contact">
+      <h2>Contact</h2>
+      <p>TO DO.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 yaxuanli. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const canvas = document.getElementById('starfield');
+    const ctx = canvas.getContext('2d');
+
+    let stars = [];
+    const numStars = 150;
+
+    function initCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      stars = [];
+      for (let i = 0; i < numStars; i++) {
+        stars.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          radius: Math.random() * 1.5,
+          speed: Math.random() * 0.4 + 0.1
+        });
+      }
+    }
+
+    function drawStars() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "rgba(255,255,255,0.8)";
+      stars.forEach(star => {
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.radius, 0, 2 * Math.PI);
+        ctx.fill();
+      });
+    }
+
+    function updateStars() {
+      stars.forEach(star => {
+        star.y += star.speed;
+        if (star.y > canvas.height) {
+          star.y = 0;
+          star.x = Math.random() * canvas.width;
+        }
+      });
+    }
+
+    function animate() {
+      drawStars();
+      updateStars();
+      requestAnimationFrame(animate);
+    }
+
+    window.addEventListener('resize', initCanvas);
+
+    initCanvas();
+    animate();
+  </script>
+</body>
+</html>
